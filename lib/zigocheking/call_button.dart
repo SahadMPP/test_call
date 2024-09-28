@@ -6,11 +6,50 @@ class CallButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Center(
         child: ZegoSendCallInvitationButton(invitees: [
           ZegoUIKitUser(id: '1', name: 'One'),
         ], isVideoCall: false),
+      ),
+    );
+  }
+}
+
+class CallPage extends StatelessWidget {
+  const CallPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Column(
+        children: [
+          CircleAvatar(
+            radius: 30,
+          ),
+          Text('Name'),
+          Spacer(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              CircleAvatar(
+                backgroundColor: Colors.white,
+                radius: 15,
+                child: Icon(Icons.music_note),
+              ),
+              CircleAvatar(
+                backgroundColor: Colors.red,
+                radius: 15,
+                child: Icon(Icons.call),
+              ),
+              CircleAvatar(
+                backgroundColor: Colors.white,
+                radius: 15,
+                child: Icon(Icons.speaker),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
