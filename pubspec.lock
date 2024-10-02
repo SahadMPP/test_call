@@ -886,7 +886,7 @@ packages:
     source: hosted
     version: "2.8.4"
   zego_zim:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: zego_zim
       sha256: beaf48e5055f30244336f60f46ba25cfe74601f31b9dfeb3d19616c2923ab791

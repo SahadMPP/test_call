@@ -35,6 +35,7 @@ dependencies:
   zego_express_engine: ^3.16.2
   zego_uikit_prebuilt_call: ^4.16.2
   zego_uikit_signaling_plugin: ^2.8.4
+  zego_zim: ^2.17.1
 
 dev_dependencies:
   flutter_lints: ^3.0.0

@@ -136,6 +136,7 @@ class _CallViewState extends State<CallView> {
   void initState() {
     super.initState();
     startListenEvent();
+
     loginRoom(getUserId(), widget.name!);
   }
 

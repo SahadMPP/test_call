@@ -1,10 +1,12 @@
 import 'package:call_tester/calling_config/screens/cal_page.dart';
 import 'package:call_tester/calling_config/util.dart';
+import 'package:call_tester/callinvitaion/experss_service.dart';
 import 'package:flutter/material.dart';
 
-
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final String userName;
+  final String userId;
+  const HomePage({super.key, required this.userName, required this.userId});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -13,6 +15,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   TextEditingController roomController = TextEditingController();
   TextEditingController nameController = TextEditingController();
+
+
+
 
   @override
   void initState() {
@@ -49,7 +54,8 @@ class _HomePageState extends State<HomePage> {
               children: [
                 TextButton(
                     onPressed: () {
-                      if (nameController.text.isEmpty || roomController.text.isEmpty) {
+                      if (nameController.text.isEmpty ||
+                          roomController.text.isEmpty) {
                         message(context, "All fields are required");
                       } else {
                         // Navigate to call page
@@ -84,6 +90,10 @@ class _HomePageState extends State<HomePage> {
                     child: const Text("Create Meeting"))
               ],
             ),
+            const Spacer(),
+            IconButton(onPressed: () {
+              ZIMService().sendVideoCallInvitation('11', '11');
+            }, icon: const Icon(Icons.call))
           ],
         ),
       ),
@@ -93,4 +103,9 @@ class _HomePageState extends State<HomePage> {
 
 void message(BuildContext context, String message) {
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+}
+
+class ZegoCallType {
+  static const int audio = 0;
+  static const int video = 1;
 }
