@@ -31,17 +31,12 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
+  permission_handler: ^11.3.1
   zego_express_engine: ^3.16.2
   zego_uikit_prebuilt_call: ^4.16.2
   zego_uikit_signaling_plugin: ^2.8.4
 
 dev_dependencies:
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
